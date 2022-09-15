@@ -22,11 +22,18 @@ const main = async () => {
      **/
     const octokit = new github.getOctokit(token);
 
-    // const { data: changedFiles } = await octokit.rest.pulls.listFiles({
-    //   owner,
-    //   repo,
-    //   pull_number: pr_number,
-    // });
+    /**
+     * We need to fetch the list of files that were changes in the Pull Request
+     * and store them in a variable.
+     * We use octokit.paginate() to automatically loop over all the pages of the
+     * results.
+     * Reference: https://octokit.github.io/rest.js/v18#pulls-list-files
+     */
+    const { data: changedFiles } = await octokit.rest.pulls.listFiles({
+      owner,
+      repo,
+      pull_number: pr_number,
+    });
 
 
     /**
@@ -98,7 +105,10 @@ const main = async () => {
       repo,
       issue_number: pr_number,
       body: `
-        hello smit dajri
+        Pull Request #${pr_number} has been updated with: \n
+        - ${diffData.changes} changes \n
+        - ${diffData.additions} additions \n
+        - ${diffData.deletions} deletions \n
       `
     });
 
