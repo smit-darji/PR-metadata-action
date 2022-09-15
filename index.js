@@ -105,7 +105,6 @@ const main = async () => {
       repo,
       issue_number: pr_number,
       body: `
-        COMMIT MESSAGE - INVALID FILENAME \n
         Pull Request #${pr_number} has been updated with: \n
         - ${diffData.changes} changes \n
         - ${diffData.additions} additions \n
