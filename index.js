@@ -105,7 +105,7 @@ const main = async () => {
       repo,
       issue_number: pr_number,
       body: `
-        hello
+        hello smit dajri
       `
     });
 
