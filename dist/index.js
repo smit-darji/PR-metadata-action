@@ -3558,8 +3558,8 @@ const main = async () => {
       repo,
       issue_number: pr_number,
       body: `
-      <h3>❌ PR TITLE</h3><p> InValid File Name.</p> \n
-        Pull Request #${pr_number} has been updated with Smit: \n
+      ❌ InValid File Name. \n
+        Pull Request #${pr_number} has been updated with : \n
         - ${diffData.changes} changes \n
         - ${diffData.additions} additions \n
         - ${diffData.deletions} deletions \n
