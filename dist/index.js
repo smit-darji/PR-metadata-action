@@ -3558,6 +3558,7 @@ const main = async () => {
       repo,
       issue_number: pr_number,
       body: `
+      
         Pull Request #${pr_number} has been updated with Smit: \n
         - ${diffData.changes} changes \n
         - ${diffData.additions} additions \n
